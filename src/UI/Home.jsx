@@ -28,7 +28,7 @@ export default function HomeUI() {
         form.append("file", file);
 
         try {
-            const res = await fetch("http://localhost:8000/upload_columns",{
+            const res = await fetch("http://103.143.71.173/upload_columns",{
                 method: "POST",
                 body: form
             });
@@ -67,7 +67,7 @@ export default function HomeUI() {
 
 
         try {
-            const res = await fetch("http://localhost:8000/train",{
+            const res = await fetch("http://103.143.71.173/train",{
                 method: "POST",
                 body: formData
             });

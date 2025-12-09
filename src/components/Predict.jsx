@@ -13,7 +13,7 @@ export default function Predict() {
         const form = new FormData();
         form.append("text", text);
         try {
-            const res = await axios.post("http://localhost:8000/predict", form);
+            const res = await axios.post("http://103.143.71.173/predict", form);
             setResult(res.data);
         } catch (err) {
             alert("Gagal prediksi: " + (err?.response?.data?.error || err.message));
@@ -34,14 +34,20 @@ export default function Predict() {
             </div>
             <textarea className="border rounded-lg px-4 py-2" rows={4} cols={100} value={text} onChange={(e) => setText(e.target.value)} />
             <div className="flex justify-center">
-                <button className="bg-blue-500 max-w-96 w-full transition-colors hover:bg-blue-700 cursor-pointer font-semibold px-3 py-1 rounded-lg text-white text-lg" onClick={handlePredict} disabled={loading}>
-                    Prediksi
-                    {loading&&
-                        (
-                            <div className="animate-spin"></div>
-                        )
-                    }
+                <button className="bg-blue-500 gap-3 flex items-center justify-center max-w-96 w-full transition-colors hover:bg-blue-700 cursor-pointer font-semibold px-3 py-1 rounded-lg text-white text-lg" onClick={handlePredict} disabled={loading}>
+                    {loading ? (
+                            <>
+                                <div className="h-5 w-5 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                                <span>Predicting...</span>
+                            </>
+                        ) : (
+                            <>
+                                <span>Predict</span>
+                            </>
+                        )}
                 </button>
+
+                
             </div>
         </div>
     );
