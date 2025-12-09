@@ -13,7 +13,7 @@ export default function Predict() {
         const form = new FormData();
         form.append("text", text);
         try {
-            const res = await axios.post("http://103.143.71.173/predict", form);
+            const res = await axios.post("https://transnetsumbar.my.id/predict", form);
             setResult(res.data);
         } catch (err) {
             alert("Gagal prediksi: " + (err?.response?.data?.error || err.message));

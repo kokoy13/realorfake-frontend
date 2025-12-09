@@ -28,7 +28,7 @@ export default function HomeUI() {
         form.append("file", file);
 
         try {
-            const res = await fetch("http://103.143.71.173/upload_columns",{
+            const res = await fetch("https://transnetsumbar.my.id/upload_columns",{
                 method: "POST",
                 body: form
             });
@@ -67,7 +67,7 @@ export default function HomeUI() {
 
 
         try {
-            const res = await fetch("http://103.143.71.173/train",{
+            const res = await fetch("https://transnetsumbar.my.id/train",{
                 method: "POST",
                 body: formData
             });
