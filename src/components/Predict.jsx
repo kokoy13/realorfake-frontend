@@ -25,7 +25,7 @@ export default function Predict() {
     return (
         <div className="flex flex-col gap-5">
             <div className="flex justify-between">
-                <h2 className="font-bold text-lg">Predict New Comment</h2>
+                <h2 className="font-bold text-lg">Predict New Title</h2>
                 <p><strong>Prediksi:</strong> 
                     {result && (
                         <span>{result.prediction}</span>
